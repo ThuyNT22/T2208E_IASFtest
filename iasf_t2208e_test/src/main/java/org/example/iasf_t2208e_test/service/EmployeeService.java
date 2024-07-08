@@ -1,10 +1,9 @@
 package org.example.iasf_t2208e_test.service;
 
-import org.example.iasf_t2208e_test.entity.Employee;
-
+import org.example.iasf_t2208e_test.dto.EmployeeDTO;
 import java.util.List;
 
 public interface EmployeeService {
-    Employee createEmployee(Employee employee);
-    List<Employee> findAllEmployees();
+    EmployeeDTO createEmployee(EmployeeDTO employeeDTO);
+    List<EmployeeDTO> findAllEmployees();
 }

@@ -1,29 +1,21 @@
-package org.example.iasf_t2208e_test.entity;
+package org.example.iasf_t2208e_test.dto;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "employee")
-public class Employee {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EmployeeDTO {
     private Long id;
-
-    @Column(nullable = false)
     private String name;
-
     private Double wage;
 
-    // Constructors, getters, setters
-    public Employee() {
+    // Constructors
+    public EmployeeDTO() {
     }
 
-    public Employee(String name, Double wage) {
+    public EmployeeDTO(Long id, String name, Double wage) {
+        this.id = id;
         this.name = name;
         this.wage = wage;
     }
 
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -50,7 +42,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "EmployeeDTO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", wage=" + wage +

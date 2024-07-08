@@ -1,6 +1,6 @@
 package org.example.iasf_t2208e_test.controller;
 
-import org.example.iasf_t2208e_test.entity.Employee;
+import org.example.iasf_t2208e_test.dto.EmployeeDTO;
 import org.example.iasf_t2208e_test.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,20 +11,16 @@ import java.util.List;
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    private final EmployeeService employeeService;
-
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
+    private EmployeeService employeeService;
 
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
-        return employeeService.createEmployee(employee);
+    public EmployeeDTO createEmployee(@RequestBody EmployeeDTO employeeDTO) {
+        return employeeService.createEmployee(employeeDTO);
     }
 
     @GetMapping
-    public List<Employee> findAllEmployees() {
+    public List<EmployeeDTO> findAllEmployees() {
         return employeeService.findAllEmployees();
     }
 }
